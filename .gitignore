@@ -1,0 +1,54 @@
+# ---------------------------------------------------------------
+# Data: videos and processed outputs stay out of Git.
+# (Use DVC for versioning them. DVC's small .dvc pointer files,
+#  e.g. data/raw.dvc, are NOT matched by these rules, so they
+#  can still be committed.)
+# ---------------------------------------------------------------
+data/raw/
+data/processed/
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.parquet
+
+# Model weights and exported models (large binaries)
+*.pt
+*.pth
+*.onnx
+*.engine
+*.weights
+models/
+
+# Ultralytics output folders created by training/prediction runs
+runs/
+
+# ---------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# ---------------------------------------------------------------
+# Secrets and environment files
+# ---------------------------------------------------------------
+.env
+.env.*
+
+# ---------------------------------------------------------------
+# macOS and editors
+# ---------------------------------------------------------------
+.DS_Store
+.vscode/
+.idea/
